@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Liste questions</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body >
+       <script src="/var/www/html/simple/libs/angular.js" ></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular-route.js"></script>
+<script src="/var/www/html/simple/script/controller.js"></script>
+<script src="/var/www/html/simple/script/service.js"></script>
+<script src="/var/www/html/simple/script/app.js"></script>
+       
+<table  class="table table-bordered" ng-app="myApp" ng-controller="questionsController">
+    <h1>Forum NTW</h1>
+    <a class="btn btn-primary" href="ajoutQ.html" role="button">Ajoutez question</a>
+
+    <thead>
+                <tr>
+                  <th>id</th>
+                  <th>titre</th>
+                  <th>text</th>
+                  <th>date</th>
+                  <th>utilisateur</th>
+                </tr>
+              </thead>  
+              <tbody ng-repeat="question in questions">
+           
+                    <td><a class="badge badge-light">{{question.id_ques}}</a></td>
+                 
+                    <td><a  class="badge badge-light">{{question.titre_ques}}</a></td>
+                    <td><a ng-href="#/{{question.id_ques}}" class="badge badge-light">{{question.text_ques}}</a></td>
+                    <td><a class="badge badge-light">{{question.date}}</a></td>
+                    <td><a class="badge badge-light">{{question.id_uti}}</a></td>
+              </tbody>
+      
+      </table>
+      
+    </body>
+
+
+    
+</html>
