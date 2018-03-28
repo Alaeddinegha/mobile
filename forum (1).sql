@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mar 27 Mars 2018 à 22:08
+-- Généré le :  Mer 28 Mars 2018 à 21:30
 -- Version du serveur :  5.7.21-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.28-0ubuntu0.16.04.1
 
@@ -64,16 +64,7 @@ INSERT INTO `reponses` (`id_rep`, `text_rep`, `date_rep`, `id_ques`, `id_uti`) V
 (2, 'regardez la doc de apache', '2018-03-10 16:00:51', 1, 0),
 (3, 'aller sur configuration apache2', '2018-03-10 16:01:26', 2, 0),
 (4, 'regarder le tuto de connelly sur youtube', '2018-03-18 11:23:30', 6, 1),
-(20, 'en ligne de commande', '2018-03-20 12:11:34', 1, 2),
-(21, 'aller sur la documentation', '2018-03-20 12:23:26', 6, 1),
-(25, 'voir doc', '2018-03-25 16:42:32', 1, 1),
-(26, 'regarez votre api', '2018-03-25 16:53:56', 10, 2),
-(27, 'une autorisation de communiquer entre client serveur', '2018-03-25 16:56:14', 9, 2),
-(28, 'demander a admin', '2018-03-25 19:30:35', 1, 1),
-(29, 'voir doc', '2018-03-25 19:33:52', 2, 1),
-(30, 'revenir', '2018-03-25 19:34:33', 2, 1),
-(31, 'ref', '2018-03-25 19:37:31', 2, 1),
-(32, 'oui', '2018-03-26 20:52:17', 1, 1);
+(21, 'aller sur la documentation', '2018-03-20 12:23:26', 6, 1);
 
 -- --------------------------------------------------------
 
@@ -131,12 +122,12 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT pour la table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `id_ques` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_ques` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT pour la table `reponses`
 --
 ALTER TABLE `reponses`
-  MODIFY `id_rep` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id_rep` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --

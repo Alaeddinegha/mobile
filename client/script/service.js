@@ -67,11 +67,12 @@ app.service('monService',['$http',function($http){
         $http({
             method:'POST',
             url:'http://forum/api/ajoutq',
-            data: {text_ques:text_ques,id_uti:id_uti}
+            data: {text_ques:text_ques,id_uti:id_uti},
+            
         }).then(function successCallback(response) {
             console.log('success')
             console.log(response);
-            
+            alert("question enregistrer")
                 $scope.questions = response.data;
                
                 
@@ -88,14 +89,31 @@ app.service('monService',['$http',function($http){
         $http({
             method:'DELETE',
             url:'http://forum/api/supp/'+id_temp
-        }).then(function successCallback(response) {
-            this.question = response.data;
            
-            $scope.responses = response.data;
+        }).then(function successCallback(response) {
+           this.question = response.data;
+           
+           
+           
             //recuperer le id de la question pour utiliser au post de la reponse
-           $scope.id_response = id_temp;         
+           $scope.id_response = id_temp;   
+                
     });
     };
-    
-
+    /*
+    this.delReponse=function(id){
+        var id_temp= id;
+        
+        console.log('this');
+        console.log(id_temp)
+       
+        $http({
+            method:'DELETE',
+            url:'http://forum/api/supp_rep/'+id_temp
+           
+        }).then(function successCallback(response) {
+            $scope.responses = response.data;
+           
+        });
+    };*/
 }]);

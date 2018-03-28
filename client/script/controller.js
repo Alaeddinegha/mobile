@@ -17,8 +17,11 @@ app.controller('questionsController',['$scope','monService',function($scope,monS
     } 
     //supp
     $scope.delQuestion = function(id, currentQ){
-        monService.delQuestion($scope, id);
-    }
+        monService.delQuestion($scope, id);}
+   /* this.delReponse=function(id){
+           monService.delReponse(id);
+       }*/
+    
  //Fonction ajouter une question
     $scope.ajoutques = function () {
         console.log('mes variables')

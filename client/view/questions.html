@@ -67,6 +67,7 @@
                  <!--  <th>id</th> -->
                    <th>Reponses</th>
                    <th>dates</th>
+                   <th>supprimer</th>
                   <!-- <th>Questions</th>-->
                  </tr>
                </thead>  
@@ -75,6 +76,7 @@
                      <td>{{reponse.text_rep}}</td>
                      <td>{{reponse.date_rep}}</td>
                    <!--  <td>{{reponse.id_ques}}</td>-->
+                   <td> 	<input type="image" img src="/home/ala/Téléchargements/delete.png" ng-click="delReponse(reponse.id_rep)"></td>
                </tbody>
        
        </table>
