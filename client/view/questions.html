@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>Forum NTW 2017</title>
@@ -15,6 +16,7 @@
 <table ng-if="responses == ''" class="table table-bordered">
   <div class="mx-auto" style="width: 300;">
   <h1>Forum NTW</h1>
+
 </div>
     <div class="row">
       <div class="col-lg-7"></div>
@@ -32,6 +34,13 @@
 <div>
     <h2 ng-if="responses == ''">Liste des questions</h2>
   </div>
+
+  <div style="float:right; width:250px;color: blue;" id="result"></div>
+  <div style="float:right; width:250px;color:red;" id="resulta"></div>
+ 
+  
+  
+
     <thead>
                 <tr>
                  <!-- <th>id</th>-->
@@ -43,14 +52,14 @@
                <!--  <th>responses</th>-->
                 </tr>
               </thead>  
-              <tbody ng-repeat="question in questions | filter: search">
+              <tbody ng-repeat="question in questions | filter: search" id="myRow">
            
                    <!-- <td><a class="badge badge-light">{{question.id_ques}}</a></td> -->
                  
                   <!--  <td><a href="#{{question.id_ques}}" ng-click="getQuestion(question.id_ques)" class="badge badge-light">{{question.titre_ques}}</a></td>-->
                     <td><a ng-href="#/question/{{question.id_ques}}"  ng-click="getQuestion(question.id_ques, question.text_ques)"  class="badge badge-light">{{question.text_ques}}</a></td>
-                    <td><a class="badge badge-light">{{question.date}}</a></td>
-                    <td> 	<input type="image" img src="/home/ala/Téléchargements/delete.png" ng-click="delQuestion(question.id_ques)"onclick='document.location.reload(false)' value="Rafraichir"></td>
+                    <td ><a class="badge badge-light">{{question.date}} {{$index}}</a></td>
+                    <td> 	<input type="image" img src="/var/www/html/client/view/delete.png" ng-click="delQuestion($index,question.id_ques)"></td>
                  <!--   <td><a class="badge badge-light">{{question.id_uti}}</a></td>-->
              <!--  <td onload="getQuestion(question.id_ques)"><a class="badge badge-light" >{{question.countResp}}</a></td>-->
               </tbody>
@@ -76,13 +85,13 @@
                      <td>{{reponse.text_rep}}</td>
                      <td>{{reponse.date_rep}}</td>
                    <!--  <td>{{reponse.id_ques}}</td>-->
-                   <td> 	<input type="image" img src="/home/ala/Téléchargements/delete.png" ng-click="delReponse(reponse.id_rep)"></td>
+                   <td> 	<input type="image" img src="/var/www/html/client/view/delete.png" ng-click="delReponse(reponse.id_rep)"></td>
                </tbody>
        
        </table>
       <div ng-if="showResponsesTable == true">
         <form ng-controller="questionsController">
-    <h3>Repondre à cette question:</h3>
+    <h3>Votre reponse:</h3>
           <div class="form-group">
             <label for="text_rep"> Votre reponse:</label>
             <input type="text"

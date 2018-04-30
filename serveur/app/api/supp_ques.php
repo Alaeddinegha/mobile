@@ -6,8 +6,7 @@ $app->delete('/api/supp/{id}', function ($request, $response){
 
  $id=$request->getAttribute('id');
 
- $query= "delete from questions where id_ques =$id";
- $result= $mysqli->query($query);
- 
+ $query= "delete from questions where id_ques = $id";
+ $stmt = $mysqli->prepare($query);
+ $stmt->execute();
 });
- 

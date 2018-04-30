@@ -15,5 +15,6 @@ require_once('../app/api/ajoutrep.php');
 require_once('../app/api/nbr_rep.php');
 require_once('../app/api/supp_ques.php');
 require_once('../app/api/supp_rep.php');
+require_once('../app/api/log.php');
 
 $app->run();
