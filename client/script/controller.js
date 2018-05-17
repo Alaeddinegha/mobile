@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 /*'use strict';
 var app=angular.module("myApp",[]);
 
 app.controller('questionsControll',['$scope','monService',function($scope,monService){
+=======
+'use strict';
+var app=angular.module("myApp",[]);
+app.controller('questionsController',['$scope','monService',function($scope,monService){
+>>>>>>> 96ffc89acbc867672f1d11ed8e489d4dae1d2cf9
 
     //console.log('stor')
    // console.log(sessionStorage.user);
@@ -51,17 +57,24 @@ app.controller('questionsControll',['$scope','monService',function($scope,monSer
         if (confirm("vous voulez supprimer?")){
            
             
+<<<<<<< HEAD
         monService.delQuestion($scope,index,id)
+=======
+        monService.delQuestion($scope,index, id)
+>>>>>>> 96ffc89acbc867672f1d11ed8e489d4dae1d2cf9
         location.reload();
      }
         
  
     }
+<<<<<<< HEAD
     $scope.delR=function(index,id){
         if (confirm("vous voulez supprimer?")){
             monService.delReponse($scope,index,id);
         }
     }
+=======
+>>>>>>> 96ffc89acbc867672f1d11ed8e489d4dae1d2cf9
     
  //Fonction ajouter une question
     $scope.ajoutques = function () {
@@ -115,7 +128,11 @@ app.controller('searchController', function ($scope, $http) {
 
     $http({
         method:'GET',
+<<<<<<< HEAD
         url:'http://serve/api/questions'
+=======
+        url:'http://forum/api/questions'
+>>>>>>> 96ffc89acbc867672f1d11ed8e489d4dae1d2cf9
     }).then(function successCallback(response) {
         $scope.questions = [];
         $scope.questions = response.data;
@@ -123,10 +140,18 @@ app.controller('searchController', function ($scope, $http) {
 })
 $http({
     method:'GET',
+<<<<<<< HEAD
     url:'http://serve/api/question/'+id_temp
+=======
+    url:'http://forum/api/question/'+id_temp
+>>>>>>> 96ffc89acbc867672f1d11ed8e489d4dae1d2cf9
 }).then(function successCallback(response) {
     this.question = response.data;
     $scope.responses = response.data;
   });
 });
+<<<<<<< HEAD
 */
+=======
+
+>>>>>>> 96ffc89acbc867672f1d11ed8e489d4dae1d2cf9

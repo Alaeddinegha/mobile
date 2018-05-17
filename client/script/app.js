@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 app=angular.module("myApp", ["ngRoute"]);
 app.config(function($routeProvider) {
     $routeProvider
@@ -164,3 +165,14 @@ $scope.logOut=function(){
     location.href="#!/";
 }
 });
+=======
+/*'use strict';
+ var app=angular.module("myApp",['ngRoute'])
+          app.config(function($routeProvider){
+              $routeProvider.when("#/:id",{
+                templateUrl:'view/question.html',
+                controller:'questionController'
+            })
+          });
+    */
+>>>>>>> 96ffc89acbc867672f1d11ed8e489d4dae1d2cf9

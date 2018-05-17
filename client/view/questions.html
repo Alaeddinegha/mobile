@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -18,6 +19,27 @@
 
 
      <div class="row" align="right"style="padding-top: 10%;">
+=======
+    <head>
+        <title>Forum NTW 2017</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body ng-app="myApp" ng-controller="questionsController">
+       <script src="/var/www/html/client/libs/angular.js" ></script>
+      
+<script src="/var/www/html/client/script/controller.js"></script>
+<script src="/var/www/html/client/script/service.js"></script>
+<script src="/var/www/html/client/script/app.js"></script>
+
+       
+<table ng-if="responses == ''" class="table table-bordered">
+  <div class="mx-auto" style="width: 300;">
+  <h1>Forum NTW</h1>
+
+</div>
+    <div class="row">
+>>>>>>> 96ffc89acbc867672f1d11ed8e489d4dae1d2cf9
       <div class="col-lg-7"></div>
       <div class="col-lg-4">
           <div class="input-group mb-3">
@@ -26,11 +48,16 @@
               </div>
               <input type="text" class="form-control" ng-model="search" placeholder="Recherche">
             </div>
+<<<<<<< HEAD
   
+=======
+   <!-- <input type="text" ng-model="search" placeholder="Recherche">-->
+>>>>>>> 96ffc89acbc867672f1d11ed8e489d4dae1d2cf9
   
   </div>
 </div>
 <div>
+<<<<<<< HEAD
    <!-- <h2 ng-if="responses == ''">Liste des questions</h2>-->
   </div>
   <h4 style="float:right; width:250px;color: rgb(78, 78, 99);" id="result"></h4>
@@ -42,6 +69,18 @@
       
 
     <thead  >
+=======
+    <h2 ng-if="responses == ''">Liste des questions</h2>
+  </div>
+
+  <div style="float:right; width:250px;color: blue;" id="result"></div>
+  <div style="float:right; width:250px;color:red;" id="resulta"></div>
+ 
+  
+  
+
+    <thead>
+>>>>>>> 96ffc89acbc867672f1d11ed8e489d4dae1d2cf9
                 <tr>
                  <!-- <th>id</th>-->
                  <!-- <th>titre</th>-->
@@ -57,6 +96,7 @@
                    <!-- <td><a class="badge badge-light">{{question.id_ques}}</a></td> -->
                  
                   <!--  <td><a href="#{{question.id_ques}}" ng-click="getQuestion(question.id_ques)" class="badge badge-light">{{question.titre_ques}}</a></td>-->
+<<<<<<< HEAD
                     <td><a ng-click="getQuestion(question.id_ques, question.text_ques)"  class="badge badge-light">{{question.text_ques}}</a></td>
                     <td ><a class="badge badge-light">{{question.date}}</a></td>
                     <td> 	<input type="image" img src="/libs/del.png" ng-click="delQuestion($index,question.id_ques)"></td>
@@ -67,6 +107,17 @@
       </table>
     </div>
       <a ng-if="responses == ''" class="btn btn-primary" href="#!ajout-question" role="button">Ajoutez question</a>
+=======
+                    <td><a ng-href="#/question/{{question.id_ques}}"  ng-click="getQuestion(question.id_ques, question.text_ques)"  class="badge badge-light">{{question.text_ques}}</a></td>
+                    <td ><a class="badge badge-light">{{question.date}} {{$index}}</a></td>
+                    <td> 	<input type="image" img src="/var/www/html/client/view/delete.png" ng-click="delQuestion($index,question.id_ques)"></td>
+                 <!--   <td><a class="badge badge-light">{{question.id_uti}}</a></td>-->
+             <!--  <td onload="getQuestion(question.id_ques)"><a class="badge badge-light" >{{question.countResp}}</a></td>-->
+              </tbody>
+      
+      </table>
+      <a ng-if="responses == ''" class="btn btn-primary" href="ajoutQ.html" role="button">Ajoutez question</a>
+>>>>>>> 96ffc89acbc867672f1d11ed8e489d4dae1d2cf9
 
        <!-- showResponsesTable is a bool by default is false in the controller-->
        <h2 ng-if="showResponsesTable == true">Question: {{currentQuestion}}</h2>
@@ -86,11 +137,18 @@
                      <td>{{reponse.text_rep}}</td>
                      <td>{{reponse.date_rep}}</td>
                    <!--  <td>{{reponse.id_ques}}</td>-->
+<<<<<<< HEAD
                    <td> 	<input type="image" img src="/libs/del.png" ng-click="delR($index,reponse.id_rep)"></td>
                </tbody>
        
        </table>
        
+=======
+                   <td> 	<input type="image" img src="/var/www/html/client/view/delete.png" ng-click="delReponse(reponse.id_rep)"></td>
+               </tbody>
+       
+       </table>
+>>>>>>> 96ffc89acbc867672f1d11ed8e489d4dae1d2cf9
       <div ng-if="showResponsesTable == true">
         <form ng-controller="questionsController">
     <h3>Votre reponse:</h3>
@@ -100,24 +158,39 @@
             class="form-control"
             ng-model="text_resp">
           </div>
+<<<<<<< HEAD
           <fieldset disabled>
         <div class="form-group">
+=======
+         <!-- <div class="form-group">
+>>>>>>> 96ffc89acbc867672f1d11ed8e489d4dae1d2cf9
             <label for="id_ques"> Numero de la question:</label>
             <input type="text"
             class="form-control"
             ng-model="id_response"
             id="id_ques">
+<<<<<<< HEAD
           </div>
         </fieldset>
            <!-- <div class="form-group">
+=======
+          </div>-->
+          <div class="form-group">
+>>>>>>> 96ffc89acbc867672f1d11ed8e489d4dae1d2cf9
             <label for="id_ques"> Votre identifiant:</label>
             <input type="text"
             class="form-control"
             ng-model="id_uti"
             id="id_uti">
+<<<<<<< HEAD
           </div>-->
           <div class="form-group">
             <button class="btn btn-primary" ng-click="ajoutRep(text_resp,id_response)"   >Ajouter</button>
+=======
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary" ng-click="ajoutRep()"  onclick='document.location.reload(false)' value="Rafraichir">Ajouter</button>
+>>>>>>> 96ffc89acbc867672f1d11ed8e489d4dae1d2cf9
             
           </div>
         
@@ -128,6 +201,10 @@
       
       </body>
 
+<<<<<<< HEAD
       
+=======
+
+>>>>>>> 96ffc89acbc867672f1d11ed8e489d4dae1d2cf9
     
 </html>

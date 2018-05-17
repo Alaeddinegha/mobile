@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -15,10 +16,31 @@
 <h3 style="display:none" id="result"></h3>
 
 <div style="position:absolute; padding-top: 10% ; left:35%;" class="container main-content">
+=======
+<link rel="stylesheet" href="/var/www/html/client/view/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+</head>
+<body  ng-app="myApp" ng-controller="questionsController">
+    <script src="/var/www/html/client/libs/angular.js" ></script>
+  
+  <script src="/var/www/html/client/script/controller.js"></script>
+  <script src="/var/www/html/client/script/service.js"></script>
+  <script src="/var/www/html/client/script/app.js"></script>
+
+<h2>Forum NTW</h2>
+
+
+<h3 style="display:none" id="result"></h3>
+<h3  id="resulta"></h3>
+<div class="container main-content">
+>>>>>>> 96ffc89acbc867672f1d11ed8e489d4dae1d2cf9
     <form ng-controller="questionsController">
       
     <div class="form-group">
         
+<<<<<<< HEAD
      <!-- <label for="user"><b>Username</b></label>-->
       <input style="width: 30%;" type="text"  class="form-control" placeholder="Enter Username"  ng-model="user">
         
@@ -35,10 +57,31 @@
   
     
   </div>
+=======
+      <label for="user"><b>Username</b></label>
+      <input type="text"  class="form-control" placeholder="Enter Username"  ng-model="user">
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password"  class="form-control" placeholder="Enter Password"  ng-model="pw">
+        
+      <a class="btn btn-primary" ng-click="log()" role="button">login</a>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+>>>>>>> 96ffc89acbc867672f1d11ed8e489d4dae1d2cf9
   </form>
 </div>
 
 
 </body>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 96ffc89acbc867672f1d11ed8e489d4dae1d2cf9
 </html>
