@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+
+</head>
+<body  ng-app="myApp" ng-controller="questionsController">
+    <script src="/var/www/html/client/libs/angular.js" ></script>
+  
+  <script src="/var/www/html/client/script/controller.js"></script>
+  <script src="/var/www/html/client/script/service.js"></script>
+  <script src="/var/www/html/client/script/app.js"></script>
+  <h2 >Question: {{currentQuestion}}</h2>
+   
+  <table class="table table-bordered">
+    <thead>
+            <tr>
+            <!--  <th>id</th> -->
+              <th>Reponses</th>
+              <th>dates</th>
+              <th>supprimer</th>
+             <!-- <th>Questions</th>-->
+            </tr>
+          </thead>  
+          <tbody ng-repeat="reponse in responses| filter: search" >
+            <!--    <td> {{reponse.id_rep}}</td> -->
+                <td>{{reponse.text_rep}}</td>
+                <td>{{reponse.date_rep}}</td>
+              <!--  <td>{{reponse.id_ques}}</td>-->
+              <td> 	<input type="image" img src="/libs/del.png" ng-click="delR($index,reponse.id_rep)"></td>
+          </tbody>
+  
+  </table>
+          </body>
+
+          </html>
+            
