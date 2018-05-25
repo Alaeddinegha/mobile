@@ -1,0 +1,14 @@
+<ion-view view-title="Reponse">
+ 
+        <ion-content class="padding" ng-controller="questionsControll">
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="reponse in responses" type="item-text-wrap"ng-click="getQuestion(question.id_ques, question.text_ques)">
+                <img ng-src="{{chat.face}}">
+                <h2>{{reponse.text_rep}}</h2>
+                <p>{{reponse.date_rep}}</p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+        
+                <ion-option-button class="button-assertive" ng-click="remove(chat)">
+                  Delete
+                </ion-option-button>
+              </ion-item>
+      </ion-content>

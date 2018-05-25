@@ -1,16 +1,32 @@
-<ion-view view-title="Chats">
-  <ion-content>
-    <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
-        <img ng-src="{{chat.face}}">
-        <h2>{{chat.name}}</h2>
-        <p>{{chat.lastText}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
 
-        <ion-option-button class="button-assertive" ng-click="remove(chat)">
-          Delete
-        </ion-option-button>
-      </ion-item>
-    </ion-list>
+<ion-view view-title="Joint">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <ion-content class="padding">
+    
+      <div class="list">
+          <label class="item item-input">
+              <input type="text" placeholder="Nom" ng-model="Nom">
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="Prenom" ng-model="Prenom">
+              </label>
+              <label class="item item-input">
+                  <input type="text" placeholder="exemple@gmail.com" ng-model="Email">
+                </label>
+          
+            <label class="item item-input">
+                <input type="text" placeholder="Pseudo" ng-model="user">
+              </label>
+         
+          <label class="item item-input">
+            <input type="password" placeholder="Mot de passe" ng-model="pw">
+          </label>
+          <!--<button class="button button-small">
+              S'inscrire
+            
+            <a type="button" class="btn btn-primary">Primary</a></button>-->
+        </div>
   </ion-content>
 </ion-view>
+ 

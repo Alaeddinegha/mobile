@@ -1,14 +1,41 @@
-<!--
-  This template loads for the 'tab.friend-detail' state (app.js)
-  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
-  The FriendsCtrl pulls data from the Friends service (service.js)
-  The Friends service returns an array of friend data
--->
-<ion-view view-title="{{chat.name}}">
-  <ion-content class="padding">
-    <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
-    <p>
-      {{chat.lastText}}
-    </p>
-  </ion-content>
-</ion-view>
+<ion-view view-title="Questions">
+ 
+ 
+    
+       
+            
+          
+    
+
+   
+  <ion-content class="padding" ng-controller="questionsControll">
+      <div class="button-bar">
+          <a class="button" ng-controller="DashCtrl" type="button" ng-click="logout()">Logout</a>
+          <a class="button">Second</a>
+          <a class="button">Third</a>
+        </div>
+        
+        <div class="ion-content">
+    <ion-list>
+      <ion-item ng-if="responses == ''"class="item-remove-animate item-avatar item-icon-right" ng-repeat="question in questions" type="item-text-wrap"ng-click="getQuestion(question.id_ques,question.text_ques)">
+          <img ng-src="{{chat.face}}">
+          <h2>{{question.text_ques}}</h2>
+          <span class="item-note">
+             {{name}}
+            </span>
+          <p>{{question.date}}</p>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+          <span class="badge badge-assertive">0</span>
+          <ion-option-button class="button-assertive" ng-click="remove(chat)">
+            Delete
+          </ion-option-button>
+        </ion-item>
+      </ion-list>
+      <ion-list ng-if="showResponsesTable == true">
+          <ion-list-header><h2>{{currentQuestion}}</h2></ion-list-header>
+          <ion-item-group reorder="true"ng-repeat="reponse in responses">
+            <ion-item >{{reponse.text_rep}}</ion-item>
+          </ion-item-group>
+      </ion-list>
+    </div>
+</ion-content>
