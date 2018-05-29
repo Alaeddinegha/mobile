@@ -1,14 +1,34 @@
 <ion-view view-title="Reponse">
+
+
+  
  
-        <ion-content class="padding" ng-controller="questionsControll">
-            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="reponse in responses" type="item-text-wrap"ng-click="getQuestion(question.id_ques, question.text_ques)">
-                <img ng-src="{{chat.face}}">
-                <h2>{{reponse.text_rep}}</h2>
-                <p>{{reponse.date_rep}}</p>
-                <i class="icon ion-chevron-right icon-accessory"></i>
-        
-                <ion-option-button class="button-assertive" ng-click="remove(chat)">
-                  Delete
-                </ion-option-button>
-              </ion-item>
-      </ion-content>
+        <ion-content class="padding" ng-controller="questionsControll" >
+                 
+                  
+                  <div class="list card">
+
+                              <div class="item item-avatar">
+                                <img src="/img/the.jpg">
+                                <h2>Marty McFly</h2>
+                                <p>November 05, 1955</p>
+                              </div>
+                            
+                              <div class="item item-body">
+                                <img class="full-image" src="/img/the.jpg">
+                                <p>
+                                  This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+                                  the content is from a card-body consisting of an image and paragraph text. The footer
+                                  consists of tabs, icons aligned left, within the card-footer.
+                                </p>
+                                <p>
+                                  <a href="#" class="subdued">1 Like</a>
+                                  <a href="#" class="subdued">5 Comments</a>
+                                </p>
+                                <ion-footer-bar align-title="left" keyboard-attach class="bar-assertive">
+                                          <h1 class="title">Title!</h1>
+                                        </ion-footer-bar>
+                              </div>
+
+                              
+      </ion-view>

@@ -1,6 +1,7 @@
 angular.module('starter.services', [])
 
   .service('monService',['$http',function($http){
+    var u=sessionStorage.user;
     this.auto=function($scope,user,pw){
       
       $http({
@@ -27,8 +28,12 @@ angular.module('starter.services', [])
              console.log('storage')
               sessionStorage.user = $scope.ut;
               console.log(sessionStorage.user);
+              
   if($scope.use=="faux"){  
-      alert("login ou mot de passe est faux")
+      
+    window.alert("login ou mot de passe est faux")
+   
+      
   location.reload();       
     
                        }
@@ -38,6 +43,7 @@ angular.module('starter.services', [])
   location.href='/#/tab/questions';       
 }
 });
+
 }
 this.getQuestions=function($scope){
   $http({
@@ -59,11 +65,76 @@ this.getQuestions=function($scope){
 
 
 };
+this.getQuestion=function($scope, id){
+    var id_temp = id;
+    console.log('Here');
+    console.log(id_temp)
+   
+    console.log('Here');
+    console.log(id_temp)
+   
+    $http({
+        method:'GET',
+        url:'http://serve/api/question/'+id_temp
+    }).then(function successCallback(response) {
+        this.question = response.data;
+        console.log(this.question)
+        $scope.responses = response.data;
+        //recuperer le id de la question pour utiliser au post de la reponse
+       $scope.id_response = id_temp;         
+       $scope.somme = $scope.responses.length;
+console.log('somme')
+console.log( $scope.somme)
+sessionStorage.totale = $scope.somme;
 
+});
+
+}
+this.conut=function($scope){
+    $http({
+        method:'GET',
+        url:'http://serve/api/nbr_u'
+    }).then(function successCallback(response) {
+       
+      
+        $scope.nombres = [];
+      $scope.nombres = response.data;  
+      console.log('XXX')
+      console.log($scope.nombres)
+})
+}
+this.sendQuestion=function($scope,text_ques,u,author,photo){
+    var u=sessionStorage.user;
+    console.log('mes envois')
+    console.log('text_ques')
+    console.log(text_ques)
+    console.log('user id')
+    console.log(u)
+    console.log('author')
+    console.log(author)
+    console.log('photo')
+    console.log(photo)
+    $http({
+        method:'POST',
+        url:'http://serve/api/ajoutq',
+        data: {text_ques:text_ques,id_uti:u,photo:photo},
+        
+    }).then(function successCallback(response) {
+        console.log('success')
+        console.log(response);
+        alert("question enregistrer")
+            $scope.questions = response.data;
+           
+          
+       
+        
+ });
+
+};
 this.outS=function(){
   
     location.href="/#/tab/dash";
     location.reload();
 }
-  
+
 }]);

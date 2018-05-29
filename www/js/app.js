@@ -71,7 +71,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
    
-
+    .state('tab.repondre', {
+      url: '/repondre',
+      views: {
+        'tab-chats': {
+          templateUrl: 'templates/reponse.html',
+          controller: 'questionsControll'
+        }
+      }
+    })
+    .state('tab.ques', {
+      url: '/ajoutq',
+      views: {
+        'tab-chats': {
+          templateUrl: 'templates/ajoutq.html',
+          controller: 'questionsControll'
+        }
+      }
+    })
 
   .state('tab.about', {
     url: '/oui',

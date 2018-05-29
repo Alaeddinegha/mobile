@@ -1,41 +1,67 @@
 <ion-view view-title="Questions">
- 
- 
-    
-       
-            
-          
-    
-
    
   <ion-content class="padding" ng-controller="questionsControll">
       <div class="button-bar">
-          <a class="button" ng-controller="DashCtrl" type="button" ng-click="logout()">Logout</a>
-          <a class="button">Second</a>
-          <a class="button">Third</a>
+          <a class="button"ng-controller="DashCtrl" type="button" ng-click="logout()">Logout</a>
+          <h4 style="float:right; width:250px;color: rgb(78, 78, 99);visibility: visible" id="result"></h4>
         </div>
-        
+ 
         <div class="ion-content">
     <ion-list>
-      <ion-item ng-if="responses == ''"class="item-remove-animate item-avatar item-icon-right" ng-repeat="question in questions" type="item-text-wrap"ng-click="getQuestion(question.id_ques,question.text_ques)">
-          <img ng-src="{{chat.face}}">
-          <h2>{{question.text_ques}}</h2>
+      <ion-item ng-if="responses == ''"class="item-remove-animate item-avatar item-icon-right" ng-repeat="question in questions" type="item-text-wrap"ng-click="getQuestion(question.id_ques,question.text,index)">
+          <img ng-src="{{question.photo}}">
+          <h2>{{question.text}}</h2>
+         <p>{{question.prenom}}</p>
           <span class="item-note">
-             {{name}}
+              {{question.date}}
             </span>
-          <p>{{question.date}}</p>
+           
           <i class="icon ion-chevron-right icon-accessory"></i>
-          <span class="badge badge-assertive">0</span>
-          <ion-option-button class="button-assertive" ng-click="remove(chat)">
+         <!-- <span class="badge badge-assertive">repondre</span>-->
+          <ion-option-button class="button-assertive" ng-click="delete()">
             Delete
           </ion-option-button>
         </ion-item>
       </ion-list>
-      <ion-list ng-if="showResponsesTable == true">
-          <ion-list-header><h2>{{currentQuestion}}</h2></ion-list-header>
+      <button class="button button-positive" ng-if="responses == ''" ng-click="ajoutQ()">
+          +
+        </button>
+      <div ng-if="showResponsesTable == true">
+      <ion-list >
+          
+        <ion-item>
+            
+            <h2>
+          <ion-scroll style="margin-top: 6%"  zooming="true" direction="xy">{{currentQuestion}}</ion-scroll>
+        </h2>
+        <div >
+           <span  style="margin-right: -8%;margin-top:-4%"class="badge badge-assertive">{{somme}}</span>
+          </div>
+          </ion-item>
           <ion-item-group reorder="true"ng-repeat="reponse in responses">
-            <ion-item >{{reponse.text_rep}}</ion-item>
+            <ion-item >
+                <h3>{{reponse.text_rep}}</h3>
+                <p>{{reponse.prenom}}</p>
+               
+                 <span class="item-note">
+                     {{reponse.date_rep}}
+                   </span>
+                   <i class="icon ion-chevron-right icon-accessory"></i>
+                   <!-- <span class="badge badge-assertive">repondre</span>-->
+                    <ion-option-button class="button-assertive" ng-click="delete()">
+                      Delete
+                    </ion-option-button>
+            </ion-item>
           </ion-item-group>
       </ion-list>
+      
     </div>
+    <button class="button button-positive" ng-if="showResponsesTable == true" ng-click="return()">
+        return
+      </button>
+      <button class="button button-positive" ng-if="showResponsesTable == true" ng-click="ajoutrep()">
+          Repondre
+        </button>
+   
+  </div>
 </ion-content>
