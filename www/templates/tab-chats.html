@@ -3,29 +3,41 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
   <ion-content class="padding">
-        <h4 ng-controller="DashCtrl" id="result"></h4>
-      <div class="list">
+      <div class="button-bar">
+          
+          
+      </div>
+      <div class="list" ng-controller="questionsControll">
           <label class="item item-input">
-              <input type="text" placeholder="Nom" ng-model="Nom">
+              <input type="text" placeholder="Nom" ng-model="nom">
             </label>
             <label class="item item-input">
-                <input type="text" placeholder="Prenom" ng-model="Prenom">
+                <input type="text" placeholder="Prenom" ng-model="prenom">
               </label>
               <label class="item item-input">
-                  <input type="text" placeholder="exemple@gmail.com" ng-model="Email">
+                  <input type="text" placeholder="exemple:4 Rue de geneve 1201-Genève" ng-model="adresse">
+                </label>
+              <label class="item item-input">
+                  <input type="text" placeholder="exemple@gmail.com" ng-model="email">
                 </label>
           
             <label class="item item-input">
-                <input type="text" placeholder="Pseudo" ng-model="user">
+                <input type="text" placeholder="Nom utilisateur" ng-model="login">
               </label>
          
           <label class="item item-input">
             <input type="password" placeholder="Mot de passe" ng-model="pw">
           </label>
-          <!--<button class="button button-small">
-              S'inscrire
-            
-            <a type="button" class="btn btn-primary">Primary</a></button>-->
+          <label class="item item-input">
+              <input type="text" placeholder="img/nom_image.png" ng-model="photo">
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="age" ng-model="age">
+              </label>
+       
+            <div align="center">
+            <a type="button" class="btn btn-primary" ng-click="ajout_utilisateur()">S'inscrire</a>
+          </div>
         </div>
   </ion-content>
 </ion-view>

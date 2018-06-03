@@ -1,67 +1,79 @@
-<ion-view view-title="Questions">
+<ion-view view-title="NTW Mobile">
    
   <ion-content class="padding" ng-controller="questionsControll">
-      <div class="button-bar">
-          <a class="button"ng-controller="DashCtrl" type="button" ng-click="logout()">Logout</a>
-          <h4 style="float:right; width:250px;color: rgb(78, 78, 99);visibility: visible" id="result"></h4>
-        </div>
- 
-        <div class="ion-content">
-    <ion-list>
-      <ion-item ng-if="responses == ''"class="item-remove-animate item-avatar item-icon-right" ng-repeat="question in questions" type="item-text-wrap"ng-click="getQuestion(question.id_ques,question.text,index)">
-          <img ng-src="{{question.photo}}">
-          <h2>{{question.text}}</h2>
-         <p>{{question.prenom}}</p>
-          <span class="item-note">
-              {{question.date}}
-            </span>
-           
-          <i class="icon ion-chevron-right icon-accessory"></i>
-         <!-- <span class="badge badge-assertive">repondre</span>-->
-          <ion-option-button class="button-assertive" ng-click="delete()">
-            Delete
-          </ion-option-button>
-        </ion-item>
-      </ion-list>
-      <button class="button button-positive" ng-if="responses == ''" ng-click="ajoutQ()">
-          +
-        </button>
-      <div ng-if="showResponsesTable == true">
-      <ion-list >
-          
-        <ion-item>
-            
-            <h2>
-          <ion-scroll style="margin-top: 6%"  zooming="true" direction="xy">{{currentQuestion}}</ion-scroll>
-        </h2>
-        <div >
-           <span  style="margin-right: -8%;margin-top:-4%"class="badge badge-assertive">{{somme}}</span>
-          </div>
-          </ion-item>
-          <ion-item-group reorder="true"ng-repeat="reponse in responses">
-            <ion-item >
-                <h3>{{reponse.text_rep}}</h3>
-                <p>{{reponse.prenom}}</p>
-               
-                 <span class="item-note">
-                     {{reponse.date_rep}}
-                   </span>
-                   <i class="icon ion-chevron-right icon-accessory"></i>
-                   <!-- <span class="badge badge-assertive">repondre</span>-->
-                    <ion-option-button class="button-assertive" ng-click="delete()">
-                      Delete
-                    </ion-option-button>
-            </ion-item>
-          </ion-item-group>
-      </ion-list>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
       
-    </div>
-    <button class="button button-positive" ng-if="showResponsesTable == true" ng-click="return()">
-        return
-      </button>
-      <button class="button button-positive" ng-if="showResponsesTable == true" ng-click="ajoutrep()">
-          Repondre
-        </button>
-   
-  </div>
-</ion-content>
+      <div class="button-bar" >
+          <div class="badge" style="margin-right: 20% "> 
+          <img style="width:50%"src="img/lout.png" ng-controller="DashCtrl" ng-click="logout()">
+          logout
+          </div>
+          <div>
+          <span style="margin-left:30%;margin-top:-2%;height:30%" class="badge badge-success"id="result"></span>
+            
+  <label class="item-input-wrapper">
+      <i class="icon ion-ios-search placeholder-icon"></i>
+    <input type="search" placeholder="Recherche" ng-model="search">
+  </label>
+        
+        </div>
+        </div>
+      
+              
+             <div style="margin-top: 10%">
+                        <ion-list  ng-if="responses == ''" ng-repeat="question in questions|orderBy:'date'| filter: search">
+                          <ion-item class="item-remove-animate item-avatar item-icon-right"  type="item-text-wrap"ng-click="getQuestion(question.id_ques,question.text,index)">
+                                <img ng-src="{{question.photo}}">
+                                <h2>{{question.text}}</h2>
+                                <p>{{question.prenom}}</p>
+                                <span class="item-note">
+                                    {{question.date}}
+                                </span>
+                               
+                                <i class="icon ion-chevron-right icon-accessory"></i>
+                                <ion-option-button class="button-assertive" ng-click="delQuestion($index,question.id_ques)">
+                                Supprimé
+                                </ion-option-button>
+                          </ion-item>
+                      </ion-list>
+                    </div>                 
+      <div ng-if="showResponsesTable==true">   
+         <ion-scroll style="margin-top: 6%"  zooming="true" direction="xy">
+            <div>
+                <span  style="margin-left:90%;margin-top:-4%"class="badge badge-assertive">{{somme}}</span>
+             </div>
+                <h4 class="title" style="font-style:oblique;font-family: Verdana, Geneva, Tahoma, sans-serif;">{{currentQuestion}}</h4>
+             
+          </ion-scroll>
+        
+         
+      </div>
+      <div class="form-group">
+          <label for="text" ng-if="responses == ''">Votre question:</label>
+          <label for="text" ng-if="showResponsesTable==true">Votre réponse:</label>
+          <textarea type="text"
+          class="form-control"
+          ng-model="text" placeholder="Ecrire...">
+          </textarea>
+          <button class="button button-balanced" ng-if="showResponsesTable==true"ng-click="ajoutRe(question.id_ques,question.text,index)">Repondre</a>
+            <button class="button button-balanced"ng-if="responses == ''" ng-click="ajoutques()">Ajouter</button>
+        </div>
+       <ion-list >
+           <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="reponse in responses|orderBy:date_rep| filter: search" type="item-text-wrap">
+              <img ng-src="{{reponse.photo}}"> 
+             
+                  <h3>{{reponse.text_rep}}</h3>
+                  <p>{{reponse.prenom}}</p>
+                  <span class="item-note">{{reponse.date_rep}}</span>
+                  <i class="icon ion-chevron-right icon-accessory"></i>
+                  <ion-option-button class="button-assertive" ng-click="delReponse($index,reponse.id_rep)">Supprimé</ion-option-button>
+                 
+          </ion-item>
+       
+    </ion-list>
+  
+     
+
+  </div> 
+  </ion-content>
