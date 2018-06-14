@@ -57,7 +57,7 @@
           ng-model="text" placeholder="Ecrire...">
           </textarea>
           <button class="button button-balanced" ng-if="showResponsesTable==true"ng-click="ajoutRe(question.id_ques,question.text,index)">Repondre</a>
-            <button class="button button-balanced"ng-if="responses == ''" ng-click="ajoutques()">Ajouter</button>
+            <button class="button button-balanced"ng-if="showResponsesTable==false" ng-click="ajoutques()">Ajouter</button>
         </div>
        <ion-list >
            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="reponse in responses|orderBy:date_rep| filter: search" type="item-text-wrap">
