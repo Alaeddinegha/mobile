@@ -1,0 +1,43 @@
+<ion-view view-title="NTW-Mobile">
+ 
+  <ion-content class="padding" style="position: absolute ;margin-top: 50%" align="center">
+     
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+      <form ng-controller="DashCtrl">
+        <h4 style="float:right; width:250px;color: rgb(78, 78, 99); visibility: hidden;" id="result"></h4>
+         
+        <div style="white-space: nowrap;margin-left: 15%;" > 
+            <h2> Connectez vous...</h2>
+        </div>
+        
+        
+        <div class="form-group">
+              
+           <!-- <label for="user"><b>Username</b></label>-->
+            <input style="width: 30%;margin-left: 37%"type="text"  class="form-control" placeholder="Non Utilisateur"  ng-model="user">
+              
+           <!-- <label for="psw"><b>Password</b></label>-->
+            <input style="width: 30%;margin-left: 37%"type="password"  class="form-control" placeholder="Mot de passe"  ng-model="pw">
+
+           
+          
+            <a class="btn btn-primary" ng-click="log()"  role="button">Se connecter</a>
+            
+            
+           
+        </div>
+        </form>
+       
+     
+          
+          </div>
+  
+        </div>
+        </div>
+        <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+  </ion-content>
+</ion-view>
+<!--<button class="button button-small" ng-click="log()">
+    Submit
+  </button>-->
