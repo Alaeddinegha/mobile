@@ -1,0 +1,4 @@
+<VirtualHost *:80>
+	DocumentRoot "/var/www/html/serveur/public/index.php/"
+	ServerName serve
+</VirtualHost>

@@ -3,7 +3,7 @@ $app->get('/api/question/{id}',function($request, $response){
     require_once('dbconnect.php');
     $id=$request->getAttribute('id');
 
-$query = "SELECT * FROM `reponses` where id_ques=$id";
+$query = "SELECT * FROM `reponses`,`utilisateurs` where id_ques=$id and reponses.id_uti=utilisateurs.id_uti" ;
             $result = $mysqli->query($query);
             while($row=$result->fetch_assoc()){
                 $data[]=$row;
